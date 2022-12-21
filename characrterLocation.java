@@ -1,5 +1,5 @@
 package com.sparta.h2test;
-                                                        /
+
 public class characrterLocation {
     public int[] solution(String[] keyinput, int[] board) {
         int[] answer = new int[2];                         //[0,0]으로 초기화한다.
