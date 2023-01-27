@@ -3,21 +3,20 @@ package com.sparta.h2test;
 import java.util.HashMap;
 
 public class algo_run {
-    public static HashMap<Integer,Long> save = new HashMap<>();
     public static void main(String[] args) {
-        System.out.println(solution(51));
+        System.out.println(solution(78));
     }
-    public static long solution(int n) {
-        long answer = mk_fibonacci(n) % 1234567;
-        return answer;
+    public static int solution(int n) {
+        return mk_nextnum(n);
     }
-
-    private static long mk_fibonacci(int n) {
-        if (n == 0) return 0;
-        else if (n == 1) return 1;
-
-        if(save.containsKey(n)) return save.get(n);
-        save.put(n, (mk_fibonacci(n-1) + mk_fibonacci(n-2)));
-        return mk_fibonacci(n-1) + mk_fibonacci(n-2);
+    private static int mk_nextnum(int n) {
+        int cnt = Integer.toBinaryString(n).replaceAll("0","").length();
+        int i = n+1;
+        while(true) {
+            if ( cnt == Integer.toBinaryString(i).replaceAll("0","").length()) {
+                return i;
+            }
+            i += 1;
+        }
     }
 }
